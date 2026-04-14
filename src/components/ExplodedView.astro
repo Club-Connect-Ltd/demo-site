@@ -94,9 +94,24 @@
     display: flex;
     align-items: center;
     gap: 3rem;
-    max-width: 1100px;
+    max-width: 1200px;
     width: 100%;
     padding: 2rem;
+  }
+
+  .exploded-overlay.is-landscape .exploded-overlay__content {
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+
+  .exploded-overlay.is-landscape .exploded-overlay__phone {
+    width: min(700px, 90vw);
+    border-radius: 12px;
+  }
+
+  .exploded-overlay.is-landscape .exploded-overlay__sidebar {
+    max-width: 700px;
+    text-align: center;
   }
 
   .exploded-overlay__phone-container {

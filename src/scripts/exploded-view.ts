@@ -17,8 +17,8 @@ function init(): void {
 
   if (!overlay) return;
 
-  // Collect all phone frames
-  currentPhones = Array.from(document.querySelectorAll<HTMLElement>('.phone-frame[data-annotation]'));
+  // Collect all annotated frames (phone + browser)
+  currentPhones = Array.from(document.querySelectorAll<HTMLElement>('[data-annotation]'));
 
   // Click handlers on phone frames
   currentPhones.forEach((phone, idx) => {
@@ -61,9 +61,13 @@ function openOverlay(phone: HTMLElement): void {
   const annotation = annotations[annotationId];
   if (!annotation) return;
 
-  // Get the image src from the phone frame
+  // Get the image src from the frame (phone or browser)
   const img = phone.querySelector('img');
   if (!img) return;
+
+  // Detect landscape (browser) vs portrait (phone) screenshots
+  const isBrowser = phone.classList.contains('browser-frame');
+  const isLandscape = isBrowser || (img.naturalWidth > img.naturalHeight);
 
   const explodedImg = document.getElementById('explodedImage') as HTMLImageElement;
   const titleEl = document.getElementById('explodedTitle');
@@ -76,6 +80,9 @@ function openOverlay(phone: HTMLElement): void {
     explodedImg.src = img.src;
     explodedImg.alt = img.alt;
   }
+
+  // Toggle landscape layout
+  overlay.classList.toggle('is-landscape', isLandscape);
 
   if (titleEl) titleEl.textContent = annotation.title;
   if (descEl) descEl.textContent = annotation.description;

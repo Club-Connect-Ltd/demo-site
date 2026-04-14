@@ -658,4 +658,194 @@ export const annotations: Record<string, ScreenAnnotation> = {
       },
     ],
   },
+
+  // === ADMIN PORTAL ===
+  'admin-users': {
+    title: 'User Management',
+    description: 'Central user registry — search, filter, and manage every account. Each user can hold multiple roles (player, coach, guardian, club official) across different clubs.',
+    callouts: [
+      {
+        x: 15, y: 15,
+        label: 'Sidebar Navigation',
+        detail: 'Full admin nav: Users, Players, Clubs, Addresses, Locations, Messaging, Feeds, Admins, Schemas',
+      },
+      {
+        x: 50, y: 12,
+        label: 'Add User',
+        detail: 'Create accounts on behalf of users — support and onboarding tool',
+      },
+      {
+        x: 50, y: 40,
+        label: 'User Table',
+        detail: 'Name, email, mobile, location, role, and creation date — sortable and paginated',
+      },
+      {
+        x: 75, y: 30,
+        label: 'Role Badges',
+        detail: 'COACH, PLAYER, ADMIN — visual role identification at a glance',
+      },
+    ],
+  },
+  'admin-players': {
+    title: 'Player Profiles',
+    description: 'Manage player profiles attached to user accounts — track ability level, age group, position, and guardian links.',
+    callouts: [
+      {
+        x: 50, y: 15,
+        label: 'Create Player Profile',
+        detail: 'Admin form: user, ability level, age group, gender, position, training days, guardians',
+      },
+      {
+        x: 75, y: 15,
+        label: 'Guardian Links',
+        detail: 'Multi-select guardians — supports shared custody and co-parenting',
+      },
+      {
+        x: 50, y: 55,
+        label: 'Player Table',
+        detail: 'Type badges (PRL/CPL), ability, age group, position — comprehensive player database',
+      },
+    ],
+  },
+  'admin-club-search': {
+    title: 'Club Search',
+    description: 'Exercise the anonymous club-first discovery flow — search for clubs, preview public profiles, inspect teams inside each club.',
+    callouts: [
+      {
+        x: 30, y: 25,
+        label: 'Step 1: Find a Club',
+        detail: 'Search with autocomplete — mirrors the public discovery experience',
+      },
+      {
+        x: 70, y: 15,
+        label: 'Step 2: Club Preview',
+        detail: 'Club name, location, slug, country, and public team count',
+      },
+      {
+        x: 70, y: 8,
+        label: 'Current Shape',
+        detail: 'Status banner showing feature availability and scope',
+      },
+      {
+        x: 50, y: 82,
+        label: 'Step 3: Team Preview',
+        detail: 'Drill into individual teams within the selected club',
+      },
+    ],
+  },
+  'admin-messaging': {
+    title: 'Admin Messaging',
+    description: 'Browse threads, send messages as any user, and create new conversations — essential for support and debugging communication issues.',
+    callouts: [
+      {
+        x: 20, y: 25,
+        label: 'Thread Browser',
+        detail: 'Filter by type, club, team — search by title, participant, or preview',
+      },
+      {
+        x: 70, y: 18,
+        label: 'Send Message',
+        detail: 'Send as any user to any thread — impersonation for support cases',
+      },
+      {
+        x: 70, y: 70,
+        label: 'Create Thread',
+        detail: 'Start direct, team, club, or group threads — on behalf of any user',
+      },
+      {
+        x: 20, y: 65,
+        label: 'Thread Preview',
+        detail: 'Live thread list with participant count, message count, and timestamps',
+      },
+    ],
+  },
+  'admin-feed-items': {
+    title: 'Feed Items',
+    description: 'Content management for the app feed — publish and target feed entries by type, source, club, team, and specific users.',
+    callouts: [
+      {
+        x: 50, y: 18,
+        label: 'Create Feed Item',
+        detail: 'Type (event/fixture), subtype, source, visibility (public), and priority targeting',
+      },
+      {
+        x: 50, y: 35,
+        label: 'Targeting Controls',
+        detail: 'Published date, tags, club, team, and specific user targeting — precision delivery',
+      },
+    ],
+  },
+  'admin-adverts': {
+    title: 'Group Session Adverts',
+    description: 'Manage coaching session advertisements — set coach, ability levels, age groups, scheduling, venue coordinates, pricing, and participant limits.',
+    callouts: [
+      {
+        x: 50, y: 18,
+        label: 'Advert Builder',
+        detail: 'Coach, title, ability levels, age groups, gender, dates — comprehensive session setup',
+      },
+      {
+        x: 50, y: 45,
+        label: 'Venue & Pricing',
+        detail: 'GPS coordinates, price, and max participants — marketplace-ready listings',
+      },
+      {
+        x: 50, y: 60,
+        label: 'Tabbed Output',
+        detail: 'Body / Summary / Actions tabs — structured content management',
+      },
+    ],
+  },
+  'admin-schemas': {
+    title: 'Schema Explorer',
+    description: 'Live database schema inspector — browse tables, indexes, and field metadata for the Convex backend. Essential for debugging and development.',
+    callouts: [
+      {
+        x: 20, y: 25,
+        label: 'Table Browser',
+        detail: 'All tables listed with field/index counts — addresses, affiliations, authAccounts, etc.',
+      },
+      {
+        x: 65, y: 12,
+        label: 'Table Detail',
+        detail: 'playerAdverts: 13 fields, 3 indexes — live from the exported backend schema',
+      },
+      {
+        x: 65, y: 30,
+        label: 'Index Inspector',
+        detail: 'by_creator, by_player, by_team — shows database column and indexed fields',
+      },
+      {
+        x: 65, y: 60,
+        label: 'Field Metadata',
+        detail: 'Property name, type, required/optional, default, reference targets, allowed values',
+      },
+    ],
+  },
+  'admin-teams': {
+    title: 'Team Management',
+    description: 'Create and manage teams within clubs — full control over age groups, ability levels, kit colours, locations, schedules, and coaching staff.',
+    callouts: [
+      {
+        x: 50, y: 18,
+        label: 'Create Team Form',
+        detail: 'Name, club, ability, age group, gender, status, visibility, join mode, location — comprehensive setup',
+      },
+      {
+        x: 50, y: 40,
+        label: 'Kit & Schedule',
+        detail: 'Home/away kit colours, match days, training days, and linked coaches',
+      },
+      {
+        x: 50, y: 50,
+        label: 'Floaters',
+        detail: 'Multi-select player assignment — coaches linked to teams',
+      },
+      {
+        x: 50, y: 72,
+        label: 'Team Table',
+        detail: 'Club, age group, status, ability, children count, creation date — full oversight',
+      },
+    ],
+  },
 };

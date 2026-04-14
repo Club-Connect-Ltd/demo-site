@@ -1,0 +1,151 @@
+---
+import { Image } from 'astro:assets';
+
+interface Props {
+  src: ImageMetadata;
+  alt: string;
+  label?: string;
+  animateDirection?: 'fade-up' | 'fade-left' | 'fade-right' | 'scale-up' | 'fade-in';
+  delay?: number;
+  annotationId?: string;
+}
+
+const {
+  src,
+  alt,
+  label,
+  animateDirection = 'fade-up',
+  delay = 0,
+  annotationId,
+} = Astro.props;
+---
+
+<div
+  class="browser-frame"
+  data-animate={animateDirection}
+  style={`--delay: ${delay}`}
+  data-annotation={annotationId}
+  role="button"
+  tabindex="0"
+  aria-label={`View ${alt} details`}
+>
+  <div class="browser-frame__chrome">
+    <div class="browser-frame__dots">
+      <span class="browser-frame__dot browser-frame__dot--red"></span>
+      <span class="browser-frame__dot browser-frame__dot--yellow"></span>
+      <span class="browser-frame__dot browser-frame__dot--green"></span>
+    </div>
+    <div class="browser-frame__url">
+      <svg class="browser-frame__lock" width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round">
+        <rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect>
+        <path d="M7 11V7a5 5 0 0 1 10 0v4"></path>
+      </svg>
+      <span>admin.clubconnect.app</span>
+    </div>
+  </div>
+  <div class="browser-frame__screen">
+    <Image
+      src={src}
+      alt={alt}
+      width={1200}
+      format="webp"
+      quality={85}
+      loading="lazy"
+      decoding="async"
+    />
+  </div>
+  {label && <p class="browser-frame__label">{label}</p>}
+</div>
+
+<style>
+  .browser-frame {
+    position: relative;
+    width: 100%;
+    max-width: 800px;
+    flex-shrink: 0;
+    border-radius: 12px;
+    overflow: hidden;
+    background: #1c1c1e;
+    box-shadow:
+      0 0 0 1px rgba(255, 255, 255, 0.08),
+      0 20px 60px rgba(0, 0, 0, 0.5),
+      0 0 30px rgba(195, 255, 77, 0.03);
+    cursor: pointer;
+    transition: transform 0.4s var(--ease-out-expo), box-shadow 0.4s ease;
+    will-change: transform;
+  }
+
+  .browser-frame:hover {
+    transform: translateY(-4px);
+    box-shadow:
+      0 0 0 1px rgba(255, 255, 255, 0.12),
+      0 30px 70px rgba(0, 0, 0, 0.6),
+      0 0 50px rgba(195, 255, 77, 0.06);
+  }
+
+  .browser-frame__chrome {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 10px 14px;
+    background: #2c2c2e;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+  }
+
+  .browser-frame__dots {
+    display: flex;
+    gap: 6px;
+    flex-shrink: 0;
+  }
+
+  .browser-frame__dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+  }
+
+  .browser-frame__dot--red { background: #ff5f57; }
+  .browser-frame__dot--yellow { background: #febc2e; }
+  .browser-frame__dot--green { background: #28c840; }
+
+  .browser-frame__url {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    padding: 4px 12px;
+    border-radius: 6px;
+    background: rgba(255, 255, 255, 0.06);
+    font-family: 'Poppins', sans-serif;
+    font-size: 0.7rem;
+    font-weight: 400;
+    color: var(--cc-text-muted);
+    max-width: 300px;
+  }
+
+  .browser-frame__lock {
+    color: #28c840;
+    flex-shrink: 0;
+  }
+
+  .browser-frame__screen {
+    width: 100%;
+    overflow: hidden;
+    line-height: 0;
+  }
+
+  .browser-frame__screen :global(img) {
+    width: 100%;
+    height: auto;
+    display: block;
+  }
+
+  .browser-frame__label {
+    text-align: center;
+    padding: 0.75rem 0 0;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 500;
+    font-size: 0.8rem;
+    color: var(--cc-text-secondary);
+  }
+</style>
