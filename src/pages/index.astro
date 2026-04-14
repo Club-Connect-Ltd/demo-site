@@ -32,6 +32,23 @@ import messages1 from '../assets/screenshots/messages/IMG_0981.PNG';
 import messages2 from '../assets/screenshots/messages/IMG_0982.PNG';
 import messages3 from '../assets/screenshots/messages/IMG_0983.PNG';
 
+import attendance1 from '../assets/screenshots/attendance/IMG_0984.PNG';
+import attendance2 from '../assets/screenshots/attendance/IMG_0985.PNG';
+
+import playerFinder1 from '../assets/screenshots/player-finder/IMG_0989.PNG';
+import playerFinder2 from '../assets/screenshots/player-finder/IMG_0990.PNG';
+import playerFinder3 from '../assets/screenshots/player-finder/IMG_0991.PNG';
+
+import childAccount1 from '../assets/screenshots/create-child-account/IMG_0992.PNG';
+import childAccount2 from '../assets/screenshots/create-child-account/IMG_0993.PNG';
+import childAccount3 from '../assets/screenshots/create-child-account/IMG_0994.PNG';
+import childAccount4 from '../assets/screenshots/create-child-account/IMG_0995.PNG';
+import childAccount5 from '../assets/screenshots/create-child-account/IMG_0996.PNG';
+
+import eventsView1 from '../assets/screenshots/events/IMG_0998.PNG';
+import eventsView2 from '../assets/screenshots/events/IMG_0999.PNG';
+import eventsView3 from '../assets/screenshots/events/IMG_1001.PNG';
+
 import { Image } from 'astro:assets';
 import logoLight from '../assets/logo-light.png';
 ---
@@ -312,7 +329,99 @@ import logoLight from '../assets/logo-light.png';
     </section>
 
     <!-- ============================================
-         SECTION 6: MESSAGING
+         SECTION 6: EVENTS VIEW
+         ============================================ -->
+    <section class="section" id="events-view">
+      <div class="container">
+        <SectionHeader
+          tag="Schedule"
+          title="Your Calendar, Always Up to Date"
+          subtitle="Upcoming fixtures, training, and socials in one chronological view. Filter by type, manage recurring series."
+        />
+
+        <div class="events-view__badges" data-animate="fade-up">
+          <FeatureBadge label="Upcoming" variant="primary" />
+          <FeatureBadge label="Series" variant="accent" />
+          <FeatureBadge label="Filters" variant="neutral" />
+        </div>
+
+        <div class="events-view__phones">
+          <PhoneFrame
+            src={eventsView1}
+            alt="Upcoming Events"
+            animateDirection="fade-up"
+            delay={0}
+            annotationId="IMG_0998"
+          />
+          <PhoneFrame
+            src={eventsView2}
+            alt="Event Type Filter"
+            animateDirection="fade-up"
+            delay={1}
+            annotationId="IMG_0999"
+          />
+          <PhoneFrame
+            src={eventsView3}
+            alt="Event Series"
+            animateDirection="fade-up"
+            delay={2}
+            annotationId="IMG_1001"
+          />
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================
+         SECTION 7: ATTENDANCE
+         ============================================ -->
+    <section class="section section--alt" id="attendance">
+      <div class="container">
+        <SectionHeader
+          tag="Attendance"
+          title="Know Who's Coming, Instantly"
+          subtitle="Real-time RSVP tracking with at-a-glance summaries. Players respond in one tap, coaches plan with confidence."
+        />
+
+        <div class="attendance__phones">
+          <PhoneFrame
+            src={attendance1}
+            alt="Attendance Overview"
+            animateDirection="fade-right"
+            delay={0}
+            annotationId="IMG_0984"
+          />
+          <PhoneFrame
+            src={attendance2}
+            alt="RSVP Response"
+            animateDirection="fade-left"
+            delay={1}
+            annotationId="IMG_0985"
+          />
+        </div>
+
+        <div class="attendance__summary" data-animate="fade-up" style="--delay: 2">
+          <div class="attendance__badge attendance__badge--going">
+            <span class="attendance__badge-num">5</span>
+            <span class="attendance__badge-label">Going</span>
+          </div>
+          <div class="attendance__badge attendance__badge--not-going">
+            <span class="attendance__badge-num">5</span>
+            <span class="attendance__badge-label">Not Going</span>
+          </div>
+          <div class="attendance__badge attendance__badge--maybe">
+            <span class="attendance__badge-num">3</span>
+            <span class="attendance__badge-label">Maybe</span>
+          </div>
+          <div class="attendance__badge attendance__badge--pending">
+            <span class="attendance__badge-num">2</span>
+            <span class="attendance__badge-label">Pending</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================
+         SECTION 8: MESSAGING
          ============================================ -->
     <section class="section" id="messaging">
       <div class="container">
@@ -361,7 +470,87 @@ import logoLight from '../assets/logo-light.png';
     </section>
 
     <!-- ============================================
-         SECTION 7: METRICS
+         SECTION 9: PLAYER FINDER
+         ============================================ -->
+    <section class="section section--alt" id="player-finder">
+      <div class="container">
+        <SectionHeader
+          tag="Recruitment"
+          title="Find Players, Build Squads"
+          subtitle="A marketplace connecting players seeking clubs with clubs seeking players. Filter by age, position, skill level, and location."
+        />
+
+        <div class="player-finder__badges" data-animate="fade-up">
+          <FeatureBadge label="Browse" variant="primary" />
+          <FeatureBadge label="Shortlist" variant="accent" />
+          <FeatureBadge label="Create Profile" variant="neutral" />
+        </div>
+
+        <div class="player-finder__phones">
+          <PhoneFrame
+            src={playerFinder1}
+            alt="Browse Players & Clubs"
+            animateDirection="fade-up"
+            delay={0}
+            annotationId="IMG_0989"
+          />
+          <PhoneFrame
+            src={playerFinder2}
+            alt="Shortlist"
+            animateDirection="fade-up"
+            delay={1}
+            annotationId="IMG_0990"
+          />
+          <PhoneFrame
+            src={playerFinder3}
+            alt="Create Profile"
+            animateDirection="fade-up"
+            delay={2}
+            annotationId="IMG_0991"
+          />
+        </div>
+
+        <div class="player-finder__callout" data-animate="fade-up" style="--delay: 2">
+          <span class="player-finder__callout-icon">⚽</span>
+          <span>Like a transfer market for grassroots football</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================
+         SECTION 10: CREATE CHILD ACCOUNT
+         ============================================ -->
+    <section class="section" id="child-accounts">
+      <div class="container">
+        <SectionHeader
+          tag="Safeguarding"
+          title="Safe Accounts for Young Players"
+          subtitle="Age-appropriate Player-Lite accounts with parental controls, multi-guardian support, and restricted communications."
+        />
+
+        <div class="child-accounts__badges" data-animate="fade-up">
+          <FeatureBadge label="Player-Lite" variant="primary" />
+          <FeatureBadge label="Multi-Guardian" variant="accent" />
+          <FeatureBadge label="Age Restrictions" variant="neutral" />
+        </div>
+
+        <FlowCarousel id="child-accounts-carousel">
+          <PhoneFrame src={childAccount1} alt="Add Your Child" annotationId="IMG_0992" delay={0} />
+          <PhoneFrame src={childAccount2} alt="Account Features" annotationId="IMG_0993" delay={1} />
+          <PhoneFrame src={childAccount3} alt="Additional Guardians" annotationId="IMG_0994" delay={2} />
+          <PhoneFrame src={childAccount4} alt="Confirmation" annotationId="IMG_0995" delay={3} />
+          <PhoneFrame src={childAccount5} alt="Account Created" annotationId="IMG_0996" delay={4} />
+        </FlowCarousel>
+
+        <div class="child-accounts__callout" data-animate="fade-up" style="--delay: 3">
+          <span class="child-accounts__callout-icon">🛡️</span>
+          <span>Built with safeguarding at the core — GDPR compliant for under-16s</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================
+         SECTION 11: METRICS
          ============================================ -->
     <section class="section section--alt" id="metrics">
       <div class="container">
@@ -372,7 +561,7 @@ import logoLight from '../assets/logo-light.png';
 
         <div class="metrics-grid">
           <MetricCard value="< 2" suffix=" min" label="Club setup time" delay={0} />
-          <MetricCard value="5" label="Core user flows" delay={1} isNumber={true} />
+          <MetricCard value="9" label="Core user flows" delay={1} isNumber={true} />
           <MetricCard value="AI" label="Powered event creation" delay={2} />
           <MetricCard value="All" label="Ages — Under 6 to Veterans" delay={3} />
         </div>
@@ -937,6 +1126,170 @@ import logoLight from '../assets/logo-light.png';
     font-weight: 400;
     font-size: var(--fs-body);
     color: var(--cc-text-secondary);
+  }
+
+  /* ============================================
+     EVENTS VIEW
+     ============================================ */
+  .events-view__badges {
+    display: flex;
+    justify-content: center;
+    gap: 0.75rem;
+    margin-bottom: 2.5rem;
+    flex-wrap: wrap;
+  }
+
+  .events-view__phones {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    flex-wrap: wrap;
+  }
+
+  /* ============================================
+     ATTENDANCE
+     ============================================ */
+  .attendance__phones {
+    display: flex;
+    justify-content: center;
+    gap: 3rem;
+    flex-wrap: wrap;
+    margin-bottom: 3rem;
+  }
+
+  .attendance__summary {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    flex-wrap: wrap;
+  }
+
+  .attendance__badge {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 1.25rem 1.5rem;
+    border-radius: 12px;
+    min-width: 100px;
+    text-align: center;
+  }
+
+  .attendance__badge-num {
+    font-family: 'Oxanium', sans-serif;
+    font-weight: 800;
+    font-size: 1.8rem;
+    line-height: 1;
+    margin-bottom: 0.25rem;
+  }
+
+  .attendance__badge-label {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 500;
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+  }
+
+  .attendance__badge--going {
+    background: rgba(76, 217, 100, 0.1);
+    border: 1px solid rgba(76, 217, 100, 0.3);
+    color: #4CD964;
+  }
+
+  .attendance__badge--not-going {
+    background: rgba(255, 59, 48, 0.1);
+    border: 1px solid rgba(255, 59, 48, 0.3);
+    color: #FF3B30;
+  }
+
+  .attendance__badge--maybe {
+    background: rgba(255, 204, 0, 0.1);
+    border: 1px solid rgba(255, 204, 0, 0.3);
+    color: #FFCC00;
+  }
+
+  .attendance__badge--pending {
+    background: rgba(152, 152, 158, 0.1);
+    border: 1px solid rgba(152, 152, 158, 0.3);
+    color: #98989E;
+  }
+
+  /* ============================================
+     PLAYER FINDER
+     ============================================ */
+  .player-finder__badges {
+    display: flex;
+    justify-content: center;
+    gap: 0.75rem;
+    margin-bottom: 2.5rem;
+    flex-wrap: wrap;
+  }
+
+  .player-finder__phones {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    flex-wrap: wrap;
+    margin-bottom: 2rem;
+  }
+
+  .player-finder__callout {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.75rem;
+    margin-top: 1rem;
+    padding: 1rem 1.5rem;
+    border-radius: 12px;
+    background: rgba(195, 255, 77, 0.05);
+    border: 1px solid rgba(195, 255, 77, 0.15);
+    font-family: 'Poppins', sans-serif;
+    font-weight: 500;
+    font-size: var(--fs-body);
+    color: var(--cc-primary);
+    max-width: 500px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .player-finder__callout-icon {
+    font-size: 1.3rem;
+    flex-shrink: 0;
+  }
+
+  /* ============================================
+     CHILD ACCOUNTS
+     ============================================ */
+  .child-accounts__badges {
+    display: flex;
+    justify-content: center;
+    gap: 0.75rem;
+    margin-bottom: 2.5rem;
+    flex-wrap: wrap;
+  }
+
+  .child-accounts__callout {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.75rem;
+    margin-top: 2rem;
+    padding: 1rem 1.5rem;
+    border-radius: 12px;
+    background: rgba(195, 255, 77, 0.05);
+    border: 1px solid rgba(195, 255, 77, 0.15);
+    font-family: 'Poppins', sans-serif;
+    font-weight: 500;
+    font-size: var(--fs-body);
+    color: var(--cc-primary);
+    max-width: 560px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .child-accounts__callout-icon {
+    font-size: 1.3rem;
+    flex-shrink: 0;
   }
 
   /* ============================================

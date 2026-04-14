@@ -347,4 +347,315 @@ export const annotations: Record<string, ScreenAnnotation> = {
       },
     ],
   },
+
+  // === ATTENDANCE ===
+  'IMG_0984': {
+    title: 'Attendance Overview',
+    description: 'At-a-glance RSVP tracking for any event — colour-coded summary counts and per-player status with one-tap management.',
+    callouts: [
+      {
+        x: 50, y: 18,
+        label: 'Event Context Card',
+        detail: 'Match details, meet time, venue, and RSVP deadline — all in one card',
+      },
+      {
+        x: 50, y: 42,
+        label: 'RSVP Summary',
+        detail: 'Going / Not Going / Maybe / Pending — instant visual breakdown with colour coding',
+      },
+      {
+        x: 70, y: 55,
+        label: 'Select All Going',
+        detail: 'Bulk action for coaches — mark all players as attending in one tap',
+      },
+      {
+        x: 50, y: 72,
+        label: 'Player Status',
+        detail: 'Individual player cards with position, number, and RSVP status',
+      },
+    ],
+  },
+  'IMG_0985': {
+    title: 'RSVP Response',
+    description: 'One-tap RSVP with optional reason — Going, Maybe, or Not Going with a free-text explanation field for coaches.',
+    callouts: [
+      {
+        x: 50, y: 42,
+        label: 'Simple Choices',
+        detail: 'Going / Maybe / Not Going — radio selection, no overthinking',
+      },
+      {
+        x: 50, y: 65,
+        label: 'Reason Field',
+        detail: '"Why can\'t you attend?" — optional context helps coaches plan alternatives',
+      },
+      {
+        x: 50, y: 28,
+        label: 'Player Identity',
+        detail: 'Avatar, name, and position — clear who is responding',
+      },
+    ],
+  },
+
+  // === PLAYER FINDER ===
+  'IMG_0989': {
+    title: 'Player Finder — Browse',
+    description: 'A marketplace connecting players with clubs and clubs with players — searchable, filterable, and tag-based discovery.',
+    callouts: [
+      {
+        x: 50, y: 10,
+        label: 'Search & Filter',
+        detail: 'Search by name, location — plus filter and sort controls',
+      },
+      {
+        x: 50, y: 35,
+        label: 'Club Listings',
+        detail: 'Clubs post what they need: age group, skill level, positions wanted',
+      },
+      {
+        x: 50, y: 45,
+        label: 'Smart Tags',
+        detail: 'Age group, skill level, position, and availability — scannable at a glance',
+      },
+      {
+        x: 50, y: 60,
+        label: 'Player Listings',
+        detail: 'Individual players can also list themselves for discovery',
+      },
+      {
+        x: 85, y: 30,
+        label: 'Shortlist Star',
+        detail: 'Tap to save interesting profiles for later',
+      },
+    ],
+  },
+  'IMG_0990': {
+    title: 'Shortlist',
+    description: 'Save interesting profiles to review later — coaches can build a watchlist of potential recruits.',
+    callouts: [
+      {
+        x: 50, y: 50,
+        label: 'Actionable Empty State',
+        detail: 'Clear instruction and CTA — "Browse Profiles" drives engagement',
+      },
+      {
+        x: 50, y: 88,
+        label: 'Tab Navigation',
+        detail: 'Browse / Shortlist / My Profile — three views for the player marketplace',
+      },
+    ],
+  },
+  'IMG_0991': {
+    title: 'Create Profile',
+    description: 'Players and clubs create discoverable profiles — profile type, bio, location with travel radius, age group, and gender.',
+    callouts: [
+      {
+        x: 50, y: 12,
+        label: 'Profile Type Picker',
+        detail: '"Player Seeking Club" — clear intent declaration up front',
+      },
+      {
+        x: 50, y: 35,
+        label: 'Location & Travel',
+        detail: 'City, region, postcode + max travel distance with stepper — practical filtering',
+      },
+      {
+        x: 50, y: 55,
+        label: 'Age & Gender',
+        detail: 'Age group and gender selectors for accurate matching',
+      },
+      {
+        x: 50, y: 22,
+        label: 'Display Name & Bio',
+        detail: 'Personalised profile with free-text description',
+      },
+    ],
+  },
+
+  // === CREATE CHILD ACCOUNT ===
+  'IMG_0992': {
+    title: 'Add Your Child',
+    description: 'Child account onboarding intro — explains Player-Lite accounts with key safeguarding features highlighted upfront.',
+    callouts: [
+      {
+        x: 50, y: 15,
+        label: 'Clear Purpose',
+        detail: '"Add Your Child" — unambiguous action with Player-Lite explanation',
+      },
+      {
+        x: 50, y: 35,
+        label: 'Safe & Supervised',
+        detail: 'Age-appropriate restrictions protect young players — trust signal for parents',
+      },
+      {
+        x: 50, y: 48,
+        label: 'Multi-Guardian',
+        detail: 'Link multiple parents or guardians to one account — co-parenting support',
+      },
+      {
+        x: 50, y: 60,
+        label: 'Team Connection',
+        detail: 'See schedules, events, and stay in the loop — the child\'s value prop',
+      },
+      {
+        x: 50, y: 85,
+        label: 'Time Estimate',
+        detail: '"Takes about 2 minutes" — sets expectations, reduces drop-off',
+      },
+    ],
+  },
+  'IMG_0993': {
+    title: 'Account Features',
+    description: 'Step 2: Age-tiered permissions — Under 16 gets expanded access with granular feature control (Core Features, Communication).',
+    callouts: [
+      {
+        x: 50, y: 8,
+        label: 'Progress Bar',
+        detail: 'Step 2 of 4 — clear progress through the wizard',
+      },
+      {
+        x: 50, y: 18,
+        label: 'Age Tier Badge',
+        detail: 'U16 / Under 16 — "Youth player with expanded access" explains the tier',
+      },
+      {
+        x: 50, y: 42,
+        label: 'Core Features List',
+        detail: 'View Schedule, Team Roster, Match Details, Personal Stats — all allowed',
+      },
+      {
+        x: 50, y: 62,
+        label: 'Communication Controls',
+        detail: '"2 allowed, 2 restricted" — granular permission management',
+      },
+    ],
+  },
+  'IMG_0994': {
+    title: 'Additional Guardians',
+    description: 'Step 3: Invite other parents or legal guardians — multi-guardian support for shared custody and co-parenting situations.',
+    callouts: [
+      {
+        x: 50, y: 30,
+        label: 'Primary Guardian',
+        detail: 'Shows the creating parent with verified badge — clear ownership',
+      },
+      {
+        x: 50, y: 55,
+        label: 'Add a Guardian',
+        detail: 'Invite another parent, step-parent, or legal guardian — inclusive language',
+      },
+      {
+        x: 50, y: 78,
+        label: 'Optional Step',
+        detail: '"Skip" button — not all families need multi-guardian, no pressure',
+      },
+    ],
+  },
+  'IMG_0995': {
+    title: 'Confirmation',
+    description: 'Step 4: Final review — shows account type, restrictions summary, and requires legal guardian confirmation checkbox.',
+    callouts: [
+      {
+        x: 50, y: 20,
+        label: 'Account Type',
+        detail: '"Player-Lite Account · Under 16 restrictions applied" — crystal clear',
+      },
+      {
+        x: 50, y: 38,
+        label: 'Restrictions Summary',
+        detail: 'No direct messaging ❌, Can view schedules ✅, Can see team roster ✅',
+      },
+      {
+        x: 50, y: 58,
+        label: 'Legal Confirmation',
+        detail: '"I confirm I am the legal guardian" — checkbox with Terms & Privacy links',
+      },
+    ],
+  },
+  'IMG_0996': {
+    title: 'Account Created!',
+    description: 'Success screen with full account summary — name, age, bracket, account type, and status plus immediate next steps.',
+    callouts: [
+      {
+        x: 50, y: 18,
+        label: 'Success State',
+        detail: '"Account Created!" — celebration moment with green checkmark',
+      },
+      {
+        x: 50, y: 48,
+        label: 'Account Summary',
+        detail: 'Name, Age, Bracket, Type, Status — complete at-a-glance reference',
+      },
+      {
+        x: 50, y: 80,
+        label: 'Next Steps',
+        detail: '"Go to Family Settings" or "Add Another Child" — clear paths forward',
+      },
+    ],
+  },
+
+  // === EVENTS ===
+  'IMG_0998': {
+    title: 'Upcoming Events',
+    description: 'Chronological event calendar — all training, matches, meetings, and socials in one scrollable timeline with type icons.',
+    callouts: [
+      {
+        x: 50, y: 8,
+        label: 'Quick Actions',
+        detail: 'Filter and + create buttons always accessible at the top',
+      },
+      {
+        x: 50, y: 30,
+        label: 'Event Cards',
+        detail: 'Type icon, name, time, and venue — scannable in under a second',
+      },
+      {
+        x: 50, y: 60,
+        label: 'Date Grouping',
+        detail: 'Events grouped by date — "Today", "Thursday, April 16" etc.',
+      },
+      {
+        x: 50, y: 88,
+        label: 'Upcoming / Series Tabs',
+        detail: 'Toggle between timeline and recurring series view',
+      },
+    ],
+  },
+  'IMG_0999': {
+    title: 'Event Type Filter',
+    description: 'Filter events by type — All Types, Training, Match, Social, Meeting plus show/hide cancelled events.',
+    callouts: [
+      {
+        x: 50, y: 15,
+        label: 'Show Cancelled Toggle',
+        detail: 'Hide or show cancelled events — keeps the view clean by default',
+      },
+      {
+        x: 50, y: 35,
+        label: 'Type Filters',
+        detail: 'Training, Match, Social, Meeting — each with a distinct icon',
+      },
+    ],
+  },
+  'IMG_1001': {
+    title: 'Event Series',
+    description: 'Manage recurring events as series — weekly training, bi-weekly matches, and monthly meetings with event counts.',
+    callouts: [
+      {
+        x: 50, y: 20,
+        label: 'Series Cards',
+        detail: 'Event name, frequency, and total count — manage the pattern, not individual events',
+      },
+      {
+        x: 50, y: 35,
+        label: 'Frequency Labels',
+        detail: '"Weekly · 31 events", "Bi-weekly, 12 times" — clear recurrence info',
+      },
+      {
+        x: 50, y: 55,
+        label: 'Type Icons',
+        detail: 'Training runner, match badge, meeting group — visual type identification',
+      },
+    ],
+  },
 };
