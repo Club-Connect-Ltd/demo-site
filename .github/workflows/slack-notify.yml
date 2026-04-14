@@ -1,0 +1,65 @@
+name: Slack Notify
+
+on:
+  workflow_call:
+    inputs:
+      title:
+        description: "Notification title"
+        required: true
+        type: string
+      message:
+        description: "Notification message body"
+        required: true
+        type: string
+      channel:
+        description: "Slack channel override (e.g. #deployments)"
+        required: false
+        type: string
+        default: ""
+    secrets:
+      SLACK_WEBHOOK_URL:
+        description: "Slack incoming webhook URL"
+        required: true
+
+jobs:
+  notify:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Send Slack notification
+        env:
+          SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
+          INPUT_TITLE: ${{ inputs.title }}
+          INPUT_MESSAGE: ${{ inputs.message }}
+          INPUT_CHANNEL: ${{ inputs.channel }}
+        shell: bash
+        run: |
+          set -euo pipefail
+
+          if [ -z "${SLACK_WEBHOOK_URL:-}" ]; then
+            echo "SLACK_WEBHOOK_URL secret is not set." >&2
+            exit 1
+          fi
+
+          python3 << 'PY'
+          import json, os, sys
+
+          title   = os.environ.get("INPUT_TITLE", "").strip()
+          message = os.environ.get("INPUT_MESSAGE", "").strip()
+          channel = os.environ.get("INPUT_CHANNEL", "").strip()
+
+          if not title or not message:
+              print("Title and message are required", file=sys.stderr)
+              sys.exit(1)
+
+          payload = {"text": f"*{title}*\n{message}"}
+          if channel:
+              payload["channel"] = channel
+
+          with open("slack_payload.json", "w") as f:
+              json.dump(payload, f)
+          PY
+
+          curl -fsS -X POST \
+            -H "Content-Type: application/json" \
+            --data @slack_payload.json \
+            "$SLACK_WEBHOOK_URL"
