@@ -1,0 +1,63 @@
+---
+interface Props {
+  label: string;
+  glow?: boolean;
+  variant?: 'primary' | 'neutral' | 'accent';
+  icon?: string;
+}
+
+const {
+  label,
+  glow = false,
+  variant = 'primary',
+  icon,
+} = Astro.props;
+---
+
+<span class:list={['badge', `badge--${variant}`, { 'badge--glow': glow }]}>
+  {icon && <span class="badge__icon">{icon}</span>}
+  {label}
+</span>
+
+<style>
+  .badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    padding: 0.4rem 1rem;
+    border-radius: 999px;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 600;
+    font-size: 0.8rem;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    white-space: nowrap;
+  }
+
+  .badge--primary {
+    background: rgba(195, 255, 77, 0.1);
+    border: 1px solid rgba(195, 255, 77, 0.3);
+    color: var(--cc-primary);
+  }
+
+  .badge--neutral {
+    background: rgba(255, 255, 255, 0.06);
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    color: var(--cc-text-secondary);
+  }
+
+  .badge--accent {
+    background: rgba(136, 219, 4, 0.1);
+    border: 1px solid rgba(136, 219, 4, 0.3);
+    color: var(--cc-accent);
+  }
+
+  .badge--glow {
+    box-shadow: 0 0 20px rgba(195, 255, 77, 0.15);
+    animation: glow-pulse 3s ease-in-out infinite;
+  }
+
+  .badge__icon {
+    font-size: 1em;
+  }
+</style>

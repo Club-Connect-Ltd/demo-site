@@ -1,0 +1,130 @@
+---
+import { Image } from 'astro:assets';
+
+interface Props {
+  src: ImageMetadata;
+  alt: string;
+  size?: 'default' | 'large';
+  animateDirection?: 'fade-up' | 'fade-left' | 'fade-right' | 'scale-up' | 'fade-in';
+  delay?: number;
+  annotationId?: string;
+  class?: string;
+}
+
+const {
+  src,
+  alt,
+  size = 'default',
+  animateDirection = 'fade-up',
+  delay = 0,
+  annotationId,
+  class: className = '',
+} = Astro.props;
+
+const imageWidth = size === 'large' ? 720 : 600;
+---
+
+<div
+  class:list={['phone-frame', `phone-frame--${size}`, className]}
+  data-animate={animateDirection}
+  style={`--delay: ${delay}`}
+  data-annotation={annotationId}
+  role="button"
+  tabindex="0"
+  aria-label={`View ${alt} details`}
+>
+  <div class="phone-frame__notch"></div>
+  <div class="phone-frame__screen">
+    <Image
+      src={src}
+      alt={alt}
+      width={imageWidth}
+      format="webp"
+      quality={82}
+      loading={delay <= 1 ? 'eager' : 'lazy'}
+      decoding="async"
+    />
+  </div>
+  <div class="phone-frame__shine"></div>
+</div>
+
+<style>
+  .phone-frame {
+    position: relative;
+    width: 280px;
+    flex-shrink: 0;
+    border-radius: 44px;
+    border: 4px solid #2a2a2a;
+    overflow: hidden;
+    background: #000;
+    box-shadow:
+      0 0 0 1px rgba(255, 255, 255, 0.06),
+      0 25px 60px rgba(0, 0, 0, 0.55),
+      0 0 40px rgba(195, 255, 77, 0.04);
+    cursor: pointer;
+    transition: transform 0.4s var(--ease-out-expo), box-shadow 0.4s ease;
+    will-change: transform;
+  }
+
+  .phone-frame:hover {
+    transform: translateY(-6px) scale(1.02);
+    box-shadow:
+      0 0 0 1px rgba(255, 255, 255, 0.1),
+      0 35px 70px rgba(0, 0, 0, 0.6),
+      0 0 60px rgba(195, 255, 77, 0.1);
+  }
+
+  .phone-frame--large {
+    width: 320px;
+  }
+
+  .phone-frame__notch {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100px;
+    height: 24px;
+    background: #1a1a1a;
+    border-radius: 0 0 16px 16px;
+    z-index: 10;
+  }
+
+  .phone-frame__screen {
+    width: 100%;
+    overflow: hidden;
+  }
+
+  .phone-frame__screen :global(img) {
+    width: 100%;
+    height: auto;
+    display: block;
+  }
+
+  .phone-frame__shine {
+    position: absolute;
+    inset: 0;
+    border-radius: 40px;
+    background: linear-gradient(
+      135deg,
+      rgba(255, 255, 255, 0.06) 0%,
+      transparent 40%,
+      transparent 100%
+    );
+    pointer-events: none;
+    z-index: 5;
+  }
+
+  @media (max-width: 767px) {
+    .phone-frame {
+      width: 220px;
+    }
+    .phone-frame--large {
+      width: 260px;
+    }
+    .phone-frame__notch {
+      width: 80px;
+      height: 20px;
+    }
+  }
+</style>

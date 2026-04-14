@@ -1,0 +1,64 @@
+---
+import { Image } from 'astro:assets';
+import logoDark from '../assets/logo-dark.png';
+---
+
+<footer class="site-footer">
+  <div class="container site-footer__inner">
+    <div class="site-footer__brand">
+      <Image src={logoDark} alt="Club Connect" width={28} height={28} format="webp" />
+      <span class="site-footer__brand-text">Club Connect</span>
+    </div>
+    <p class="site-footer__copy">&copy; {new Date().getFullYear()} Club Connect. All rights reserved.</p>
+    <p class="site-footer__confidential">Confidential &mdash; For Investor Review Only</p>
+  </div>
+</footer>
+
+<style>
+  .site-footer {
+    padding: 3rem 0;
+    border-top: 1px solid rgba(255, 255, 255, 0.06);
+  }
+
+  .site-footer__inner {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+    text-align: center;
+  }
+
+  .site-footer__brand {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+
+  .site-footer__brand :global(img) {
+    width: 28px;
+    height: 28px;
+    object-fit: contain;
+  }
+
+  .site-footer__brand-text {
+    font-family: 'Oxanium', sans-serif;
+    font-weight: 700;
+    font-size: 1rem;
+    color: var(--cc-text-primary);
+  }
+
+  .site-footer__copy {
+    font-family: 'Poppins', sans-serif;
+    font-size: 0.8rem;
+    color: var(--cc-text-muted);
+  }
+
+  .site-footer__confidential {
+    font-family: 'Poppins', sans-serif;
+    font-size: 0.75rem;
+    color: var(--cc-text-muted);
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    opacity: 0.6;
+  }
+</style>

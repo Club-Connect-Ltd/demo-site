@@ -1,0 +1,1155 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Navbar from '../components/Navbar.astro';
+import PhoneFrame from '../components/PhoneFrame.astro';
+import SectionHeader from '../components/SectionHeader.astro';
+import FeatureBadge from '../components/FeatureBadge.astro';
+import PainPointCard from '../components/PainPointCard.astro';
+import MetricCard from '../components/MetricCard.astro';
+import FlowCarousel from '../components/FlowCarousel.astro';
+import ExplodedView from '../components/ExplodedView.astro';
+import Footer from '../components/Footer.astro';
+
+// -- Screenshots --
+import firstRun1 from '../assets/screenshots/first-run/IMG_0968.PNG';
+import firstRun2 from '../assets/screenshots/first-run/IMG_0969.PNG';
+import firstRun3 from '../assets/screenshots/first-run/IMG_0970.PNG';
+
+import createClub1 from '../assets/screenshots/create-club/IMG_0971.PNG';
+import createClub2 from '../assets/screenshots/create-club/IMG_0972.PNG';
+import createClub3 from '../assets/screenshots/create-club/IMG_0973.PNG';
+
+import aiEvent1 from '../assets/screenshots/ai-create-event/IMG_0974.PNG';
+import aiEvent2 from '../assets/screenshots/ai-create-event/IMG_0975.PNG';
+
+import newEvent1 from '../assets/screenshots/create-new-event/IMG_0976.PNG';
+import newEvent2 from '../assets/screenshots/create-new-event/IMG_0977.PNG';
+import newEvent3 from '../assets/screenshots/create-new-event/IMG_0978.PNG';
+import newEvent4 from '../assets/screenshots/create-new-event/IMG_0979.PNG';
+import newEvent5 from '../assets/screenshots/create-new-event/IMG_0980.PNG';
+
+import messages1 from '../assets/screenshots/messages/IMG_0981.PNG';
+import messages2 from '../assets/screenshots/messages/IMG_0982.PNG';
+import messages3 from '../assets/screenshots/messages/IMG_0983.PNG';
+
+import { Image } from 'astro:assets';
+import logoLight from '../assets/logo-light.png';
+---
+
+<BaseLayout>
+  <Navbar />
+
+  <main>
+    <!-- ============================================
+         SECTION 1: HERO
+         ============================================ -->
+    <section class="hero section" id="hero">
+      <div class="ambient-orb ambient-orb--primary hero__orb"></div>
+
+      <div class="container hero__content">
+        <div class="hero__text" data-animate="fade-up">
+          <div class="hero__logo">
+            <Image src={logoLight} alt="Club Connect Logo" width={80} format="webp" />
+          </div>
+          <h1 class="hero__title">
+            The Operating System for<br />
+            <span class="gradient-text">Community Sports</span>
+          </h1>
+          <p class="hero__subtitle">
+            Club Connect brings together players, coaches, parents, and officials
+            in one intelligent platform.
+          </p>
+        </div>
+
+        <div class="hero__phones">
+          <PhoneFrame
+            src={firstRun2}
+            alt="Find Your Team"
+            animateDirection="fade-up"
+            delay={1}
+            annotationId="IMG_0969"
+            class="hero__phone hero__phone--left"
+          />
+          <PhoneFrame
+            src={firstRun1}
+            alt="Welcome to Club Connect"
+            animateDirection="fade-up"
+            delay={0}
+            annotationId="IMG_0968"
+            class="hero__phone hero__phone--center"
+          />
+          <PhoneFrame
+            src={firstRun3}
+            alt="Sign In Options"
+            animateDirection="fade-up"
+            delay={2}
+            annotationId="IMG_0970"
+            class="hero__phone hero__phone--right"
+          />
+        </div>
+
+        <div class="hero__scroll-hint" data-animate="fade-in" style="--delay: 4">
+          <span>Scroll to explore</span>
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+            <polyline points="6 9 12 15 18 9"></polyline>
+          </svg>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================
+         SECTION 2: PROBLEM STATEMENT
+         ============================================ -->
+    <section class="section section--alt" id="problem">
+      <div class="container">
+        <SectionHeader
+          tag="The Problem"
+          title="Community Sports Clubs Deserve Better Tools"
+          subtitle="Coaches juggle WhatsApp groups, spreadsheets, and paper sign-up sheets. There has to be a better way."
+        />
+
+        <div class="pain-cards">
+          <PainPointCard
+            icon="💬"
+            title="Scattered Communication"
+            description="5+ WhatsApp groups per team. Important messages get lost in the noise. Parents miss training updates."
+            delay={0}
+          />
+          <PainPointCard
+            icon="📋"
+            title="Manual Event Planning"
+            description="Fixtures, training, and socials managed via spreadsheets and memory. Double bookings and no-shows are common."
+            delay={1}
+          />
+          <PainPointCard
+            icon="🏢"
+            title="No Central Hub"
+            description="Club admin is fragmented across email, paper forms, and word of mouth. No single source of truth."
+            delay={2}
+          />
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================
+         SECTION 3: CLUB SETUP FLOW
+         ============================================ -->
+    <section class="section" id="club-setup">
+      <div class="container">
+        <SectionHeader
+          tag="Onboarding"
+          title="Your Club, Up and Running in Minutes"
+          subtitle="A guided wizard takes you from zero to a fully configured club in under 2 minutes."
+        />
+
+        <div class="flow-steps">
+          <div class="flow-step" data-animate="fade-up" style="--delay: 0">
+            <div class="flow-step__number">1</div>
+            <PhoneFrame
+              src={createClub1}
+              alt="Set Club Location"
+              annotationId="IMG_0971"
+              delay={0}
+            />
+            <p class="flow-step__label">Set Location</p>
+          </div>
+
+          <div class="flow-step__connector" data-animate="fade-in" style="--delay: 1">
+            <svg width="60" height="2" viewBox="0 0 60 2">
+              <line x1="0" y1="1" x2="60" y2="1" stroke="rgba(195,255,77,0.3)" stroke-width="2" stroke-dasharray="4 4" />
+            </svg>
+          </div>
+
+          <div class="flow-step" data-animate="fade-up" style="--delay: 1">
+            <div class="flow-step__number">2</div>
+            <PhoneFrame
+              src={createClub2}
+              alt="Choose Age Groups"
+              annotationId="IMG_0972"
+              delay={1}
+            />
+            <p class="flow-step__label">Choose Age Groups</p>
+          </div>
+
+          <div class="flow-step__connector" data-animate="fade-in" style="--delay: 2">
+            <svg width="60" height="2" viewBox="0 0 60 2">
+              <line x1="0" y1="1" x2="60" y2="1" stroke="rgba(195,255,77,0.3)" stroke-width="2" stroke-dasharray="4 4" />
+            </svg>
+          </div>
+
+          <div class="flow-step" data-animate="fade-up" style="--delay: 2">
+            <div class="flow-step__number flow-step__number--success">✓</div>
+            <div class="flow-step__glow">
+              <PhoneFrame
+                src={createClub3}
+                alt="Club Created"
+                annotationId="IMG_0973"
+                delay={2}
+              />
+            </div>
+            <p class="flow-step__label">You're Live!</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================
+         SECTION 4: AI EVENT CREATION — THE USP
+         ============================================ -->
+    <section class="section section--ai" id="ai-events">
+      <div class="ambient-orb ambient-orb--strong ai__orb"></div>
+      <div class="ambient-orb ambient-orb--primary ai__orb-2"></div>
+
+      <div class="container">
+        <div class="ai__header" data-animate="fade-up">
+          <FeatureBadge label="AI-Powered" icon="✨" glow={true} />
+        </div>
+
+        <SectionHeader
+          tag="Key Differentiator"
+          title="AI-Powered Event Creation"
+          subtitle="Just tell it what you want. The AI handles the rest."
+          gradient={true}
+        />
+
+        <div class="ai__phones">
+          <div class="ai__phone-group" data-animate="fade-right" style="--delay: 0">
+            <PhoneFrame
+              src={aiEvent1}
+              alt="AI Chat — Describe Your Event"
+              size="large"
+              annotationId="IMG_0974"
+              delay={0}
+            />
+            <p class="ai__phone-caption">Describe in plain English</p>
+          </div>
+
+          <div class="ai__arrow" data-animate="fade-in" style="--delay: 1">
+            <svg width="80" height="40" viewBox="0 0 80 40">
+              <path d="M0 20 L60 20 M50 10 L62 20 L50 30" stroke="var(--cc-primary)" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round" opacity="0.6">
+                <animate attributeName="opacity" values="0.3;1;0.3" dur="2s" repeatCount="indefinite" />
+              </path>
+            </svg>
+          </div>
+
+          <div class="ai__phone-group" data-animate="fade-left" style="--delay: 1">
+            <PhoneFrame
+              src={aiEvent2}
+              alt="AI Creates Structured Event"
+              size="large"
+              annotationId="IMG_0975"
+              delay={1}
+            />
+            <p class="ai__phone-caption">Event created in seconds</p>
+          </div>
+        </div>
+
+        <!-- Typing Demo -->
+        <div class="typing-demo" id="typingDemo" data-animate="fade-up" style="--delay: 2">
+          <div class="typing-demo__window">
+            <div class="typing-demo__header">
+              <div class="typing-demo__dot typing-demo__dot--red"></div>
+              <div class="typing-demo__dot typing-demo__dot--yellow"></div>
+              <div class="typing-demo__dot typing-demo__dot--green"></div>
+              <span class="typing-demo__title">AI Event Assistant</span>
+            </div>
+            <div class="typing-demo__body">
+              <div class="typing-demo__user" style="visibility: hidden;"></div>
+              <div class="typing-demo__ai">
+                <span class="typing-demo__avatar">🤖</span>
+                <span class="typing-demo__text"></span>
+              </div>
+              <div class="typing-demo__user-reply" style="visibility: hidden;"></div>
+              <div class="typing-demo__result">
+                <div class="typing-demo__result-icon">🏃</div>
+                <div class="typing-demo__result-content">
+                  <strong>Training</strong>
+                  <span>Tuesday, Apr 14, 2026 · 6:00 pm</span>
+                  <span>Main Training Pitch</span>
+                </div>
+              </div>
+              <div class="typing-demo__cursor">|</div>
+            </div>
+          </div>
+        </div>
+
+        <p class="ai__callout" data-animate="fade-up" style="--delay: 3">
+          From words to scheduled events in seconds — no forms, no friction.
+        </p>
+      </div>
+    </section>
+
+    <!-- ============================================
+         SECTION 5: EVENT MANAGEMENT
+         ============================================ -->
+    <section class="section section--alt" id="events">
+      <div class="container">
+        <SectionHeader
+          tag="Event Management"
+          title="Every Event Type, One Workflow"
+          subtitle="Matches, training sessions, and social events — each with purpose-built forms and smart defaults."
+        />
+
+        <div class="events__badges" data-animate="fade-up">
+          <FeatureBadge label="Match" variant="primary" />
+          <FeatureBadge label="Training" variant="accent" />
+          <FeatureBadge label="Social" variant="neutral" />
+        </div>
+
+        <FlowCarousel id="events-carousel">
+          <PhoneFrame src={newEvent1} alt="Events Dashboard" annotationId="IMG_0976" delay={0} />
+          <PhoneFrame src={newEvent2} alt="Training Event Form" annotationId="IMG_0977" delay={1} />
+          <PhoneFrame src={newEvent3} alt="Social Event Options" annotationId="IMG_0978" delay={2} />
+          <PhoneFrame src={newEvent4} alt="Match Setup" annotationId="IMG_0979" delay={3} />
+          <PhoneFrame src={newEvent5} alt="Discard Changes Dialog" annotationId="IMG_0980" delay={4} />
+        </FlowCarousel>
+
+        <div class="events__detail-callout" data-animate="fade-up" style="--delay: 3">
+          <span class="events__detail-icon">💡</span>
+          <span>Thoughtful UX details like unsaved-changes protection show the depth of our product thinking.</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================
+         SECTION 6: MESSAGING
+         ============================================ -->
+    <section class="section" id="messaging">
+      <div class="container">
+        <SectionHeader
+          tag="Communication"
+          title="Communication, Centralised"
+          subtitle="Replace scattered WhatsApp groups with one unified, structured messaging platform."
+        />
+
+        <div class="messaging__badges" data-animate="fade-up">
+          <FeatureBadge label="Team Channels" variant="primary" />
+          <FeatureBadge label="Broadcasts" variant="accent" />
+          <FeatureBadge label="Direct Messages" variant="neutral" />
+          <FeatureBadge label="Read-Only Admin" variant="neutral" />
+        </div>
+
+        <div class="messaging__phones">
+          <PhoneFrame
+            src={messages1}
+            alt="Messages Inbox"
+            animateDirection="fade-up"
+            delay={0}
+            annotationId="IMG_0981"
+          />
+          <PhoneFrame
+            src={messages2}
+            alt="Broadcast Channel"
+            animateDirection="fade-up"
+            delay={1}
+            annotationId="IMG_0982"
+          />
+          <PhoneFrame
+            src={messages3}
+            alt="Team Group Chat"
+            animateDirection="fade-up"
+            delay={2}
+            annotationId="IMG_0983"
+          />
+        </div>
+
+        <div class="messaging__stat" data-animate="scale-up" style="--delay: 2">
+          <span class="messaging__stat-number">5+</span>
+          <span class="messaging__stat-text">WhatsApp groups replaced with 1 unified inbox</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================
+         SECTION 7: METRICS
+         ============================================ -->
+    <section class="section section--alt" id="metrics">
+      <div class="container">
+        <SectionHeader
+          tag="By the Numbers"
+          title="Built for Real Clubs"
+        />
+
+        <div class="metrics-grid">
+          <MetricCard value="< 2" suffix=" min" label="Club setup time" delay={0} />
+          <MetricCard value="5" label="Core user flows" delay={1} isNumber={true} />
+          <MetricCard value="AI" label="Powered event creation" delay={2} />
+          <MetricCard value="All" label="Ages — Under 6 to Veterans" delay={3} />
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================
+         SECTION 8: BUILT FOR SCALE
+         ============================================ -->
+    <section class="section" id="tech">
+      <div class="container">
+        <SectionHeader
+          tag="Technology"
+          title="Built for Scale"
+          subtitle="Native performance, modern architecture, and accessibility-first design."
+        />
+
+        <div class="tech-grid">
+          <div class="tech-card" data-animate="fade-up" style="--delay: 0">
+            <div class="tech-card__icon">📱</div>
+            <h3 class="tech-card__title">Native iOS</h3>
+            <p class="tech-card__desc">Built with SwiftUI for buttery-smooth 60fps performance and native feel.</p>
+          </div>
+          <div class="tech-card" data-animate="fade-up" style="--delay: 1">
+            <div class="tech-card__icon">🤖</div>
+            <h3 class="tech-card__title">AI Integration</h3>
+            <p class="tech-card__desc">Natural language processing turns conversational input into structured data.</p>
+          </div>
+          <div class="tech-card" data-animate="fade-up" style="--delay: 2">
+            <div class="tech-card__icon">⚡</div>
+            <h3 class="tech-card__title">Real-time Messaging</h3>
+            <p class="tech-card__desc">Instant delivery with push notifications, read receipts, and channel management.</p>
+          </div>
+          <div class="tech-card" data-animate="fade-up" style="--delay: 3">
+            <div class="tech-card__icon">♿</div>
+            <h3 class="tech-card__title">Accessibility First</h3>
+            <p class="tech-card__desc">WCAG AAA contrast targets, dynamic type support, and VoiceOver optimised.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================
+         SECTION 9: CALL TO ACTION
+         ============================================ -->
+    <section class="section section--cta" id="cta">
+      <div class="ambient-orb ambient-orb--primary cta__orb"></div>
+      <div class="container cta__content">
+        <div class="cta__text" data-animate="fade-up">
+          <h2 class="cta__title">
+            Ready to Transform<br />
+            <span class="gradient-text">Community Sports?</span>
+          </h2>
+          <p class="cta__subtitle">
+            Club Connect is seeking investment to expand our platform across the UK and beyond.
+          </p>
+        </div>
+
+        <div class="cta__buttons" data-animate="fade-up" style="--delay: 1">
+          <a href="#" class="cta__btn cta__btn--primary" onclick="event.preventDefault()">Schedule a Demo</a>
+          <a href="#" class="cta__btn cta__btn--outline" onclick="event.preventDefault()">Download Pitch Deck</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <ExplodedView />
+  <Footer />
+
+  <script src="../scripts/animations.ts"></script>
+  <script src="../scripts/exploded-view.ts"></script>
+  <script src="../scripts/typing-demo.ts"></script>
+</BaseLayout>
+
+<style>
+  /* ============================================
+     HERO
+     ============================================ */
+  .hero {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-top: 6rem;
+    padding-bottom: 2rem;
+    text-align: center;
+    position: relative;
+  }
+
+  .hero__orb {
+    width: 700px;
+    height: 700px;
+    top: 10%;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+  .hero__content {
+    position: relative;
+    z-index: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 3rem;
+  }
+
+  .hero__text {
+    max-width: 800px;
+  }
+
+  .hero__logo {
+    margin-bottom: 1.5rem;
+  }
+
+  .hero__logo :global(img) {
+    width: 80px;
+    height: auto;
+    margin: 0 auto;
+  }
+
+  .hero__title {
+    font-family: 'Oxanium', sans-serif;
+    font-weight: 800;
+    font-size: var(--fs-hero);
+    color: var(--cc-text-primary);
+    margin-bottom: 1.25rem;
+    line-height: 1.1;
+  }
+
+  .hero__subtitle {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 400;
+    font-size: var(--fs-subtitle);
+    color: var(--cc-text-secondary);
+    max-width: 580px;
+    margin: 0 auto;
+    line-height: 1.7;
+  }
+
+  .hero__phones {
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    gap: 1.5rem;
+    perspective: 1200px;
+    will-change: transform;
+  }
+
+  .hero__phones :global(.hero__phone--left) {
+    transform: rotateY(8deg) translateY(24px) scale(0.9);
+  }
+
+  .hero__phones :global(.hero__phone--center) {
+    z-index: 2;
+    transform: scale(1);
+  }
+
+  .hero__phones :global(.hero__phone--right) {
+    transform: rotateY(-8deg) translateY(24px) scale(0.9);
+  }
+
+  .hero__scroll-hint {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+    color: var(--cc-text-muted);
+    font-family: 'Poppins', sans-serif;
+    font-size: 0.8rem;
+    animation: scroll-hint 2s ease-in-out infinite;
+  }
+
+  @media (max-width: 767px) {
+    .hero__phones {
+      gap: 0.75rem;
+    }
+
+    .hero__phones :global(.hero__phone--left),
+    .hero__phones :global(.hero__phone--right) {
+      display: none;
+    }
+  }
+
+  /* ============================================
+     PAIN POINTS
+     ============================================ */
+  .pain-cards {
+    display: flex;
+    gap: 1.5rem;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  /* ============================================
+     CLUB SETUP FLOW
+     ============================================ */
+  .flow-steps {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    flex-wrap: wrap;
+  }
+
+  .flow-step {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+  }
+
+  .flow-step__number {
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    background: var(--cc-bg-elevated);
+    border: 2px solid rgba(195, 255, 77, 0.3);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Oxanium', sans-serif;
+    font-weight: 700;
+    font-size: 0.9rem;
+    color: var(--cc-primary);
+  }
+
+  .flow-step__number--success {
+    background: var(--cc-primary);
+    color: #0a0a0a;
+    border-color: var(--cc-primary);
+  }
+
+  .flow-step__label {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 500;
+    font-size: var(--fs-small);
+    color: var(--cc-text-secondary);
+    text-align: center;
+  }
+
+  .flow-step__glow {
+    position: relative;
+  }
+
+  .flow-step__glow::after {
+    content: '';
+    position: absolute;
+    inset: -20px;
+    border-radius: 60px;
+    background: radial-gradient(circle, rgba(195, 255, 77, 0.1) 0%, transparent 70%);
+    pointer-events: none;
+    z-index: -1;
+  }
+
+  .flow-step__connector {
+    display: flex;
+    align-items: center;
+    padding-bottom: 3rem;
+  }
+
+  @media (max-width: 900px) {
+    .flow-step__connector {
+      display: none;
+    }
+
+    .flow-steps {
+      gap: 2.5rem;
+    }
+  }
+
+  /* ============================================
+     AI EVENTS — THE USP
+     ============================================ */
+  .section--ai {
+    padding: var(--space-xl) 0;
+  }
+
+  .ai__orb {
+    width: 900px;
+    height: 900px;
+    top: 20%;
+    left: 30%;
+  }
+
+  .ai__orb-2 {
+    width: 500px;
+    height: 500px;
+    bottom: 10%;
+    right: 10%;
+    animation-delay: -8s;
+  }
+
+  .ai__header {
+    text-align: center;
+    margin-bottom: 1rem;
+  }
+
+  .ai__phones {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 2rem;
+    margin-bottom: 3rem;
+    flex-wrap: wrap;
+  }
+
+  .ai__phone-group {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+  }
+
+  .ai__phone-caption {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 500;
+    font-size: var(--fs-small);
+    color: var(--cc-text-secondary);
+    text-align: center;
+  }
+
+  .ai__arrow {
+    flex-shrink: 0;
+    padding-bottom: 2.5rem;
+  }
+
+  .ai__callout {
+    text-align: center;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 500;
+    font-size: var(--fs-body);
+    color: var(--cc-primary);
+    margin-top: 2rem;
+    opacity: 0.9;
+  }
+
+  @media (max-width: 767px) {
+    .ai__arrow {
+      transform: rotate(90deg);
+      padding-bottom: 0;
+    }
+  }
+
+  /* ---- Typing Demo ---- */
+  .typing-demo {
+    max-width: 600px;
+    margin: 0 auto;
+  }
+
+  .typing-demo__window {
+    border-radius: 12px;
+    overflow: hidden;
+    background: #1c1c1e;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    box-shadow: var(--cc-shadow-card);
+  }
+
+  .typing-demo__header {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    padding: 12px 16px;
+    background: rgba(255, 255, 255, 0.04);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+  }
+
+  .typing-demo__dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+  }
+
+  .typing-demo__dot--red { background: #ff5f57; }
+  .typing-demo__dot--yellow { background: #febc2e; }
+  .typing-demo__dot--green { background: #28c840; }
+
+  .typing-demo__title {
+    margin-left: 8px;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 500;
+    font-size: 0.75rem;
+    color: var(--cc-text-secondary);
+  }
+
+  .typing-demo__body {
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    min-height: 200px;
+  }
+
+  .typing-demo__user,
+  .typing-demo__user-reply {
+    align-self: flex-end;
+    background: #0b84fe;
+    color: white;
+    padding: 8px 14px;
+    border-radius: 18px 18px 4px 18px;
+    font-family: 'Poppins', sans-serif;
+    font-size: 0.85rem;
+    max-width: 80%;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+  }
+
+  .typing-demo__user.is-sent,
+  .typing-demo__user-reply.is-sent {
+    opacity: 1;
+  }
+
+  .typing-demo__ai {
+    align-self: flex-start;
+    display: flex;
+    gap: 8px;
+    max-width: 85%;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+  }
+
+  .typing-demo__ai.is-visible {
+    opacity: 1;
+  }
+
+  .typing-demo__avatar {
+    flex-shrink: 0;
+    font-size: 1.2rem;
+  }
+
+  .typing-demo__ai .typing-demo__text {
+    background: #2c2c2e;
+    color: var(--cc-text-primary);
+    padding: 8px 14px;
+    border-radius: 18px 18px 18px 4px;
+    font-family: 'Poppins', sans-serif;
+    font-size: 0.85rem;
+    line-height: 1.5;
+  }
+
+  .typing-demo__result {
+    align-self: flex-start;
+    margin-left: 28px;
+    display: flex;
+    gap: 12px;
+    padding: 12px 16px;
+    border-radius: 12px;
+    background: rgba(195, 255, 77, 0.08);
+    border: 1px solid rgba(195, 255, 77, 0.2);
+    opacity: 0;
+    transform: translateY(10px);
+    transition: opacity 0.4s ease, transform 0.4s var(--ease-out-expo);
+  }
+
+  .typing-demo__result.is-visible {
+    opacity: 1;
+    transform: none;
+  }
+
+  .typing-demo__result-icon {
+    font-size: 1.5rem;
+    flex-shrink: 0;
+  }
+
+  .typing-demo__result-content {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+    font-family: 'Poppins', sans-serif;
+    font-size: 0.8rem;
+    color: var(--cc-text-secondary);
+  }
+
+  .typing-demo__result-content strong {
+    color: var(--cc-text-primary);
+    font-size: 0.9rem;
+  }
+
+  .typing-demo__cursor {
+    align-self: flex-start;
+    color: var(--cc-primary);
+    font-family: monospace;
+    font-size: 1.2rem;
+    animation: typing-cursor 0.8s step-end infinite;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+  }
+
+  /* ============================================
+     EVENTS
+     ============================================ */
+  .events__badges {
+    display: flex;
+    justify-content: center;
+    gap: 0.75rem;
+    margin-bottom: 2rem;
+    flex-wrap: wrap;
+  }
+
+  .events__detail-callout {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.75rem;
+    margin-top: 2rem;
+    padding: 1rem 1.5rem;
+    border-radius: 12px;
+    background: rgba(255, 255, 255, 0.04);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    font-family: 'Poppins', sans-serif;
+    font-size: var(--fs-small);
+    color: var(--cc-text-secondary);
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .events__detail-icon {
+    font-size: 1.2rem;
+    flex-shrink: 0;
+  }
+
+  /* ============================================
+     MESSAGING
+     ============================================ */
+  .messaging__badges {
+    display: flex;
+    justify-content: center;
+    gap: 0.75rem;
+    margin-bottom: 2.5rem;
+    flex-wrap: wrap;
+  }
+
+  .messaging__phones {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    flex-wrap: wrap;
+    margin-bottom: 3rem;
+  }
+
+  .messaging__stat {
+    text-align: center;
+    padding: 2rem;
+    border-radius: 16px;
+    background: rgba(195, 255, 77, 0.05);
+    border: 1px solid rgba(195, 255, 77, 0.15);
+    max-width: 480px;
+    margin: 0 auto;
+  }
+
+  .messaging__stat-number {
+    font-family: 'Oxanium', sans-serif;
+    font-weight: 800;
+    font-size: 2.5rem;
+    color: var(--cc-primary);
+    display: block;
+    margin-bottom: 0.25rem;
+  }
+
+  .messaging__stat-text {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 400;
+    font-size: var(--fs-body);
+    color: var(--cc-text-secondary);
+  }
+
+  /* ============================================
+     METRICS
+     ============================================ */
+  .metrics-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 1.5rem;
+  }
+
+  /* ============================================
+     TECH
+     ============================================ */
+  .tech-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1.5rem;
+  }
+
+  .tech-card {
+    padding: 2rem;
+    border-radius: 16px;
+    background: var(--cc-bg-card);
+    border: 1px solid rgba(255, 255, 255, 0.06);
+    text-align: center;
+    transition: transform 0.3s ease, border-color 0.3s ease;
+  }
+
+  .tech-card:hover {
+    transform: translateY(-4px);
+    border-color: rgba(195, 255, 77, 0.15);
+  }
+
+  .tech-card__icon {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+  }
+
+  .tech-card__title {
+    font-family: 'Oxanium', sans-serif;
+    font-weight: 600;
+    font-size: 1.15rem;
+    color: var(--cc-text-primary);
+    margin-bottom: 0.5rem;
+  }
+
+  .tech-card__desc {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 400;
+    font-size: var(--fs-small);
+    color: var(--cc-text-secondary);
+    line-height: 1.6;
+  }
+
+  /* ============================================
+     CTA
+     ============================================ */
+  .section--cta {
+    min-height: 70vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+  }
+
+  .cta__orb {
+    width: 600px;
+    height: 600px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+
+  .cta__content {
+    position: relative;
+    z-index: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2.5rem;
+  }
+
+  .cta__title {
+    font-family: 'Oxanium', sans-serif;
+    font-weight: 800;
+    font-size: var(--fs-section-title);
+    color: var(--cc-text-primary);
+    line-height: 1.15;
+  }
+
+  .cta__subtitle {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 400;
+    font-size: var(--fs-subtitle);
+    color: var(--cc-text-secondary);
+    max-width: 520px;
+    line-height: 1.7;
+  }
+
+  .cta__buttons {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .cta__btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.85rem 2rem;
+    border-radius: 999px;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 600;
+    font-size: 1rem;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    cursor: pointer;
+  }
+
+  .cta__btn:hover {
+    transform: translateY(-2px);
+  }
+
+  .cta__btn--primary {
+    background: var(--cc-primary);
+    color: #0a0a0a;
+  }
+
+  .cta__btn--primary:hover {
+    box-shadow: 0 8px 30px rgba(195, 255, 77, 0.3);
+  }
+
+  .cta__btn--outline {
+    background: transparent;
+    color: var(--cc-text-primary);
+    border: 2px solid rgba(255, 255, 255, 0.2);
+  }
+
+  .cta__btn--outline:hover {
+    border-color: rgba(255, 255, 255, 0.4);
+    box-shadow: 0 8px 30px rgba(255, 255, 255, 0.05);
+  }
+
+  /* ============================================
+     EXPLODED VIEW CALLOUT DOTS (global)
+     ============================================ */
+  :global(.callout-dot) {
+    position: absolute;
+    width: 12px;
+    height: 12px;
+    transform: translate(-50%, -50%);
+    opacity: 0;
+    transition: opacity 0.4s ease;
+    transition-delay: var(--callout-delay, 0.4s);
+  }
+
+  :global(.exploded-overlay.is-active .callout-dot) {
+    opacity: 1;
+  }
+
+  :global(.callout-dot__ping) {
+    position: absolute;
+    inset: -4px;
+    border-radius: 50%;
+    border: 2px solid var(--cc-primary);
+    animation: pulse-dot 2s ease-in-out infinite;
+  }
+
+  :global(.callout-dot__center) {
+    position: absolute;
+    inset: 2px;
+    border-radius: 50%;
+    background: var(--cc-primary);
+    box-shadow: 0 0 8px rgba(195, 255, 77, 0.6);
+  }
+
+  :global(.detail-item) {
+    display: flex;
+    gap: 0.75rem;
+    align-items: flex-start;
+  }
+
+  :global(.detail-item__dot) {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: var(--cc-primary);
+    flex-shrink: 0;
+    margin-top: 6px;
+    box-shadow: 0 0 6px rgba(195, 255, 77, 0.4);
+  }
+
+  :global(.detail-item__content) {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+  }
+
+  :global(.detail-item__label) {
+    font-family: 'Oxanium', sans-serif;
+    font-weight: 600;
+    font-size: 0.85rem;
+    color: var(--cc-primary);
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+  }
+
+  :global(.detail-item__text) {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 400;
+    font-size: 0.8rem;
+    color: var(--cc-text-secondary);
+    line-height: 1.5;
+  }
+</style>

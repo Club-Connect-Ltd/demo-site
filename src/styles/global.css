@@ -1,0 +1,241 @@
+/* ============================================
+   Club Connect Demo Site — Global Styles
+   ============================================ */
+
+/* --- Fonts --- */
+@import '@fontsource/oxanium/400.css';
+@import '@fontsource/oxanium/500.css';
+@import '@fontsource/oxanium/600.css';
+@import '@fontsource/oxanium/700.css';
+@import '@fontsource/oxanium/800.css';
+@import '@fontsource/poppins/300.css';
+@import '@fontsource/poppins/400.css';
+@import '@fontsource/poppins/500.css';
+@import '@fontsource/poppins/600.css';
+@import '@fontsource/poppins/700.css';
+
+/* --- Custom Properties --- */
+:root {
+  /* Brand colours */
+  --cc-primary: #C3FF4D;
+  --cc-primary-dark: #88DB04;
+  --cc-primary-glow: rgba(195, 255, 77, 0.15);
+  --cc-primary-glow-strong: rgba(195, 255, 77, 0.25);
+  --cc-accent: #88DB04;
+  --cc-secondary-accent: #EEA172;
+  --cc-destructive: #FF7C70;
+
+  /* Surfaces */
+  --cc-bg-deep: #0a0a0a;
+  --cc-bg-section: #111111;
+  --cc-bg-card: #1a1a1a;
+  --cc-bg-elevated: #2a2a2a;
+  --cc-surface-elevated: #3A3A3C;
+
+  /* Text */
+  --cc-text-primary: #FEFFFF;
+  --cc-text-secondary: #98989E;
+  --cc-text-muted: #666666;
+
+  /* Typography sizes (fluid) */
+  --fs-hero: clamp(2.8rem, 6vw, 5.5rem);
+  --fs-section-title: clamp(2rem, 4vw, 3.5rem);
+  --fs-subtitle: clamp(1.05rem, 2vw, 1.4rem);
+  --fs-body: clamp(0.95rem, 1.5vw, 1.125rem);
+  --fs-small: clamp(0.8rem, 1.2vw, 0.95rem);
+  --fs-stat-number: clamp(2.5rem, 5vw, 4rem);
+
+  /* Spacing */
+  --space-xs: 0.5rem;
+  --space-sm: 1rem;
+  --space-md: 2rem;
+  --space-lg: 4rem;
+  --space-xl: 6rem;
+  --space-section: clamp(5rem, 12vh, 8rem);
+
+  /* Animations */
+  --ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-out-quart: cubic-bezier(0.25, 1, 0.5, 1);
+  --duration-slow: 0.8s;
+  --duration-medium: 0.5s;
+  --duration-fast: 0.3s;
+
+  /* Shadows */
+  --cc-shadow-phone: 0 25px 60px rgba(0, 0, 0, 0.5);
+  --cc-shadow-card: 0 8px 32px rgba(0, 0, 0, 0.3);
+}
+
+/* --- Reset --- */
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  font-family: 'Poppins', 'SF Pro Text', -apple-system, sans-serif;
+  font-weight: 400;
+  color: var(--cc-text-primary);
+  background: var(--cc-bg-deep);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button {
+  font-family: inherit;
+  cursor: pointer;
+  border: none;
+  background: none;
+  color: inherit;
+}
+
+ul, ol {
+  list-style: none;
+}
+
+/* --- Typography --- */
+h1, h2, h3, h4, .heading {
+  font-family: 'Oxanium', 'SF Pro Display', -apple-system, sans-serif;
+  font-weight: 700;
+  line-height: 1.15;
+  letter-spacing: -0.02em;
+}
+
+/* --- Utility Classes --- */
+.container {
+  width: 100%;
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 clamp(1.5rem, 4vw, 4rem);
+}
+
+.gradient-text {
+  background: linear-gradient(135deg, var(--cc-primary) 0%, #ffffff 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.section {
+  position: relative;
+  padding: var(--space-section) 0;
+  overflow: hidden;
+}
+
+.section--alt {
+  background: var(--cc-bg-section);
+}
+
+/* --- Scroll Animation Base --- */
+[data-animate] {
+  opacity: 0;
+  transition:
+    opacity var(--duration-slow) var(--ease-out-expo),
+    transform var(--duration-slow) var(--ease-out-expo);
+  transition-delay: calc(var(--delay, 0) * 0.12s);
+}
+
+[data-animate].is-visible {
+  opacity: 1;
+  transform: none !important;
+}
+
+[data-animate="fade-up"] { transform: translateY(50px); }
+[data-animate="fade-down"] { transform: translateY(-40px); }
+[data-animate="fade-left"] { transform: translateX(60px); }
+[data-animate="fade-right"] { transform: translateX(-60px); }
+[data-animate="scale-up"] { transform: scale(0.9); }
+[data-animate="fade-in"] { transform: none; }
+
+/* --- Keyframe Animations --- */
+@keyframes float-orb {
+  0%, 100% { transform: translate(0, 0) scale(1); }
+  33% { transform: translate(30px, -20px) scale(1.05); }
+  66% { transform: translate(-20px, 15px) scale(0.95); }
+}
+
+@keyframes pulse-dot {
+  0%, 100% { box-shadow: 0 0 0 0 rgba(195, 255, 77, 0.4); }
+  50% { box-shadow: 0 0 0 10px rgba(195, 255, 77, 0); }
+}
+
+@keyframes scroll-hint {
+  0%, 100% { transform: translateY(0); opacity: 0.6; }
+  50% { transform: translateY(8px); opacity: 1; }
+}
+
+@keyframes shimmer {
+  0% { background-position: -200% center; }
+  100% { background-position: 200% center; }
+}
+
+@keyframes glow-pulse {
+  0%, 100% { opacity: 0.5; }
+  50% { opacity: 1; }
+}
+
+@keyframes typing-cursor {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
+}
+
+@keyframes arrow-flow {
+  0% { transform: translateX(0); opacity: 0.3; }
+  50% { opacity: 1; }
+  100% { transform: translateX(12px); opacity: 0.3; }
+}
+
+/* --- Ambient Orb --- */
+.ambient-orb {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(80px);
+  pointer-events: none;
+  z-index: 0;
+  animation: float-orb 20s ease-in-out infinite;
+}
+
+.ambient-orb--primary {
+  background: radial-gradient(circle, var(--cc-primary-glow) 0%, transparent 70%);
+}
+
+.ambient-orb--strong {
+  background: radial-gradient(circle, var(--cc-primary-glow-strong) 0%, transparent 70%);
+}
+
+/* --- Reduced Motion --- */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+
+  [data-animate] {
+    opacity: 1 !important;
+    transform: none !important;
+  }
+}

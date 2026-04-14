@@ -1,0 +1,114 @@
+---
+import { Image } from 'astro:assets';
+import logoDark from '../assets/logo-dark.png';
+---
+
+<nav class="site-nav" id="siteNav">
+  <div class="site-nav__inner container">
+    <a href="#hero" class="site-nav__brand">
+      <Image src={logoDark} alt="Club Connect" width={32} height={32} format="webp" />
+      <span class="site-nav__brand-text">Club Connect</span>
+    </a>
+
+    <div class="site-nav__links">
+      <a href="#club-setup" class="site-nav__link">Setup</a>
+      <a href="#ai-events" class="site-nav__link">AI Events</a>
+      <a href="#events" class="site-nav__link">Management</a>
+      <a href="#messaging" class="site-nav__link">Messaging</a>
+    </div>
+
+    <a href="#cta" class="site-nav__cta">Get in Touch</a>
+  </div>
+</nav>
+
+<style>
+  .site-nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 100;
+    padding: 1rem 0;
+    transition: background 0.4s ease, padding 0.4s ease, backdrop-filter 0.4s ease;
+  }
+
+  .site-nav.is-scrolled {
+    background: rgba(10, 10, 10, 0.85);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    padding: 0.6rem 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+  }
+
+  .site-nav__inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 2rem;
+  }
+
+  .site-nav__brand {
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+    flex-shrink: 0;
+  }
+
+  .site-nav__brand :global(img) {
+    width: 32px;
+    height: 32px;
+    object-fit: contain;
+  }
+
+  .site-nav__brand-text {
+    font-family: 'Oxanium', sans-serif;
+    font-weight: 700;
+    font-size: 1.15rem;
+    color: var(--cc-text-primary);
+    letter-spacing: -0.01em;
+  }
+
+  .site-nav__links {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+  }
+
+  .site-nav__link {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 500;
+    font-size: 0.85rem;
+    color: var(--cc-text-secondary);
+    transition: color 0.3s ease;
+    letter-spacing: 0.02em;
+  }
+
+  .site-nav__link:hover {
+    color: var(--cc-text-primary);
+  }
+
+  .site-nav__cta {
+    display: inline-flex;
+    align-items: center;
+    padding: 0.5rem 1.25rem;
+    border-radius: 999px;
+    background: var(--cc-primary);
+    color: #0a0a0a;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 600;
+    font-size: 0.85rem;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    flex-shrink: 0;
+  }
+
+  .site-nav__cta:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 4px 20px rgba(195, 255, 77, 0.3);
+  }
+
+  @media (max-width: 767px) {
+    .site-nav__links {
+      display: none;
+    }
+  }
+</style>

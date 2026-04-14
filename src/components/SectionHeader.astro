@@ -1,0 +1,69 @@
+---
+interface Props {
+  tag: string;
+  title: string;
+  subtitle?: string;
+  gradient?: boolean;
+  align?: 'left' | 'center';
+}
+
+const {
+  tag,
+  title,
+  subtitle,
+  gradient = false,
+  align = 'center',
+} = Astro.props;
+---
+
+<div class:list={['section-header', `section-header--${align}`]} data-animate="fade-up">
+  <span class="section-header__tag">{tag}</span>
+  <h2 class:list={['section-header__title', { 'gradient-text': gradient }]}>
+    {title}
+  </h2>
+  {subtitle && <p class="section-header__subtitle">{subtitle}</p>}
+</div>
+
+<style>
+  .section-header {
+    margin-bottom: clamp(2.5rem, 5vw, 4rem);
+  }
+
+  .section-header--center {
+    text-align: center;
+  }
+
+  .section-header--center .section-header__subtitle {
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .section-header__tag {
+    display: inline-block;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 600;
+    font-size: var(--fs-small);
+    color: var(--cc-primary);
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    margin-bottom: 0.75rem;
+  }
+
+  .section-header__title {
+    font-family: 'Oxanium', sans-serif;
+    font-weight: 700;
+    font-size: var(--fs-section-title);
+    color: var(--cc-text-primary);
+    margin-bottom: 1rem;
+    line-height: 1.15;
+  }
+
+  .section-header__subtitle {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 400;
+    font-size: var(--fs-subtitle);
+    color: var(--cc-text-secondary);
+    max-width: 640px;
+    line-height: 1.6;
+  }
+</style>

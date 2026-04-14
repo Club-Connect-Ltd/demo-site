@@ -1,0 +1,55 @@
+---
+interface Props {
+  icon: string;
+  title: string;
+  description: string;
+  delay?: number;
+}
+
+const { icon, title, description, delay = 0 } = Astro.props;
+---
+
+<div class="pain-card" data-animate="fade-up" style={`--delay: ${delay}`}>
+  <div class="pain-card__icon">{icon}</div>
+  <h3 class="pain-card__title">{title}</h3>
+  <p class="pain-card__desc">{description}</p>
+</div>
+
+<style>
+  .pain-card {
+    flex: 1;
+    min-width: 250px;
+    padding: 2rem;
+    border-radius: 16px;
+    background: var(--cc-bg-card);
+    border: 1px solid rgba(255, 255, 255, 0.06);
+    text-align: center;
+    transition: transform 0.3s ease, border-color 0.3s ease;
+  }
+
+  .pain-card:hover {
+    transform: translateY(-4px);
+    border-color: rgba(255, 255, 255, 0.12);
+  }
+
+  .pain-card__icon {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+  }
+
+  .pain-card__title {
+    font-family: 'Oxanium', sans-serif;
+    font-weight: 600;
+    font-size: 1.15rem;
+    color: var(--cc-text-primary);
+    margin-bottom: 0.5rem;
+  }
+
+  .pain-card__desc {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 400;
+    font-size: var(--fs-small);
+    color: var(--cc-text-secondary);
+    line-height: 1.6;
+  }
+</style>
