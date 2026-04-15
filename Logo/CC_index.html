@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Club Connect Logo — 3D Preview</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display",
+                         "Helvetica Neue", Arial, sans-serif;
+            background: #f5f5f7;
+            color: #1d1d1f;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 2rem 1rem;
+        }
+
+        .card {
+            background: #fff;
+            border-radius: 20px;
+            box-shadow: 0 4px 24px rgba(0, 0, 0, 0.08);
+            max-width: 400px;
+            width: 100%;
+            overflow: hidden;
+            text-align: center;
+        }
+
+        .hero {
+            background: linear-gradient(135deg, #d4ff70 0%, #2f3437 100%);
+            padding: 3rem 2rem 2rem;
+        }
+
+        .logo-preview {
+            width: 80px;
+            height: 80px;
+            margin: 0 auto 1rem;
+        }
+
+        .logo-preview img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+        }
+
+        .hero h1 {
+            font-size: 1.8rem;
+            font-weight: 700;
+            margin-bottom: 0.25rem;
+            color: #fff;
+            text-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+        }
+
+        .hero p {
+            font-size: 0.95rem;
+            color: rgba(255, 255, 255, 0.85);
+        }
+
+        .body-content {
+            padding: 1.5rem 2rem 2rem;
+        }
+
+        /* AR Quick Look link styled as a button */
+        .ar-link {
+            display: inline-block;
+            width: 100%;
+            padding: 1rem;
+            border-radius: 12px;
+            background: #1d1d1f;
+            color: #fff;
+            text-decoration: none;
+            font-size: 1.05rem;
+            font-weight: 600;
+            transition: background 0.2s;
+        }
+
+        .ar-link:hover { background: #333; }
+        .ar-link:active { background: #555; }
+
+        .ar-badge {
+            font-size: 0.8rem;
+            font-weight: 400;
+            opacity: 0.7;
+            display: block;
+            margin-top: 0.25rem;
+        }
+
+        .download-link {
+            display: inline-block;
+            margin-top: 1rem;
+            font-size: 0.9rem;
+            color: #0071e3;
+            text-decoration: none;
+        }
+
+        .download-link:hover { text-decoration: underline; }
+
+        .note {
+            margin-top: 1.5rem;
+            font-size: 0.8rem;
+            color: #86868b;
+            line-height: 1.4;
+        }
+
+        footer {
+            margin-top: 2rem;
+            font-size: 0.75rem;
+            color: #86868b;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="card">
+        <div class="hero">
+            <div class="logo-preview">
+                <img src="CC_App_logo.png" alt="Club Connect logo">
+            </div>
+            <h1>Club Connect</h1>
+            <p>3D Logo &middot; USDZ</p>
+        </div>
+
+        <div class="body-content">
+            <!--
+                AR Quick Look: the <a> tag with rel="ar" tells Safari/iOS
+                to open the USDZ in AR Quick Look directly.
+                The <img> inside is required by the AR Quick Look spec.
+            -->
+            <a rel="ar" href="CC_Logo.usdz" class="ar-link">
+                <img style="display:none" src="">
+                View in AR
+                <span class="ar-badge">Opens AR Quick Look on iPhone &amp; iPad</span>
+            </a>
+
+            <br>
+
+            <a href="CC_Logo.usdz" download class="download-link">
+                Download CC_Logo.usdz
+            </a>
+
+            <p class="note">
+                On iOS, tap <strong>View in AR</strong> to place the Club Connect
+                logo on a surface using your camera. The logo rotates slowly in 3D.
+                On desktop, the file will download for viewing in Xcode or Quick Look.
+            </p>
+        </div>
+    </div>
+
+    <footer>GAAD 2026</footer>
+
+</body>
+</html>
