@@ -2,6 +2,9 @@
 import BaseLayout from '@/layouts/BaseLayout.astro';
 import { Image } from 'astro:assets';
 import logoDark from '@/assets/logo-dark.png';
+
+const base = import.meta.env.BASE_URL.replace(/\/$/, '');
+const usdzHref = `${base}/logo/CC_Logo.usdz`;
 ---
 
 <BaseLayout title="Club Connect — 3D Logo" description="View the Club Connect 3D logo in AR on iPhone and iPad, or download the USDZ file.">
@@ -25,13 +28,13 @@ import logoDark from '@/assets/logo-dark.png';
           the USDZ in AR Quick Look directly.
           The hidden <img> inside is required by the AR Quick Look spec.
         -->
-        <a rel="ar" href="/logo/CC_Logo.usdz" class="logo-ar-btn">
+        <a rel="ar" href={usdzHref} class="logo-ar-btn">
           <img style="display:none" src="" />
           <span class="logo-ar-btn__label">View in AR</span>
           <span class="logo-ar-btn__badge">Opens AR Quick Look on iPhone &amp; iPad</span>
         </a>
 
-        <a href="/logo/CC_Logo.usdz" download class="logo-download">
+        <a href={usdzHref} download class="logo-download">
           Download CC_Logo.usdz
         </a>
 
