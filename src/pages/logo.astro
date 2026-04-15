@@ -1,0 +1,197 @@
+---
+import BaseLayout from '@/layouts/BaseLayout.astro';
+import { Image } from 'astro:assets';
+import logoDark from '@/assets/logo-dark.png';
+---
+
+<BaseLayout title="Club Connect — 3D Logo" description="View the Club Connect 3D logo in AR on iPhone and iPad, or download the USDZ file.">
+  <main class="logo-page">
+    <div class="logo-card">
+
+      <!-- Hero banner -->
+      <div class="logo-hero">
+        <div class="logo-hero__icon">
+          <Image src={logoDark} alt="Club Connect logo" width={80} height={80} format="webp" />
+        </div>
+        <h1 class="logo-hero__title">Club Connect</h1>
+        <p class="logo-hero__subtitle">3D Logo &middot; USDZ</p>
+      </div>
+
+      <!-- Body -->
+      <div class="logo-body">
+
+        <!--
+          AR Quick Look: rel="ar" tells Safari / iOS to open
+          the USDZ in AR Quick Look directly.
+          The hidden <img> inside is required by the AR Quick Look spec.
+        -->
+        <a rel="ar" href="/logo/CC_Logo.usdz" class="logo-ar-btn">
+          <img style="display:none" src="" />
+          <span class="logo-ar-btn__label">View in AR</span>
+          <span class="logo-ar-btn__badge">Opens AR Quick Look on iPhone &amp; iPad</span>
+        </a>
+
+        <a href="/logo/CC_Logo.usdz" download class="logo-download">
+          Download CC_Logo.usdz
+        </a>
+
+        <p class="logo-note">
+          On iOS, tap <strong>View in AR</strong> to place the Club Connect logo
+          on a surface using your camera. The logo rotates slowly in 3D.
+          On desktop, the file will download for viewing in Xcode or Quick Look.
+        </p>
+      </div>
+    </div>
+
+    <p class="logo-footer">&copy; {new Date().getFullYear()} Club Connect &middot; GAAD 2026</p>
+  </main>
+</BaseLayout>
+
+<style>
+  /* ---- Page ---- */
+  .logo-page {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: var(--space-md) var(--space-sm);
+    background: var(--cc-bg-deep);
+  }
+
+  /* ---- Card ---- */
+  .logo-card {
+    max-width: 420px;
+    width: 100%;
+    border-radius: 24px;
+    overflow: hidden;
+    background: var(--cc-bg-card);
+    box-shadow:
+      0 8px 32px rgba(0, 0, 0, 0.5),
+      0 0 0 1px rgba(255, 255, 255, 0.06);
+  }
+
+  /* ---- Hero ---- */
+  .logo-hero {
+    background: linear-gradient(135deg, var(--cc-primary) 0%, var(--cc-primary-dark) 100%);
+    padding: 3rem 2rem 2rem;
+    text-align: center;
+  }
+
+  .logo-hero__icon {
+    width: 80px;
+    height: 80px;
+    margin: 0 auto 1.25rem;
+  }
+
+  .logo-hero__icon :global(img) {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    filter: drop-shadow(0 2px 10px rgba(0, 0, 0, 0.25));
+  }
+
+  .logo-hero__title {
+    font-family: 'Oxanium', sans-serif;
+    font-weight: 700;
+    font-size: var(--fs-section-title);
+    color: var(--cc-bg-deep);
+    letter-spacing: -0.02em;
+    margin-bottom: 0.35rem;
+  }
+
+  .logo-hero__subtitle {
+    font-family: 'Poppins', sans-serif;
+    font-size: var(--fs-small);
+    font-weight: 500;
+    color: rgba(10, 10, 10, 0.7);
+  }
+
+  /* ---- Body ---- */
+  .logo-body {
+    padding: 1.5rem 2rem 2rem;
+    text-align: center;
+  }
+
+  /* AR button */
+  .logo-ar-btn {
+    display: block;
+    width: 100%;
+    padding: 1rem;
+    border-radius: 14px;
+    background: var(--cc-primary);
+    color: var(--cc-bg-deep);
+    text-decoration: none;
+    transition:
+      transform 0.3s var(--ease-out-expo),
+      box-shadow 0.3s var(--ease-out-expo),
+      background 0.2s ease;
+  }
+
+  .logo-ar-btn:hover {
+    background: var(--cc-primary-dark);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 24px rgba(195, 255, 77, 0.25);
+  }
+
+  .logo-ar-btn:active {
+    transform: translateY(0);
+  }
+
+  .logo-ar-btn__label {
+    display: block;
+    font-family: 'Poppins', sans-serif;
+    font-size: 1.05rem;
+    font-weight: 600;
+    letter-spacing: -0.01em;
+  }
+
+  .logo-ar-btn__badge {
+    display: block;
+    font-family: 'Poppins', sans-serif;
+    font-size: 0.8rem;
+    font-weight: 400;
+    opacity: 0.7;
+    margin-top: 0.3rem;
+  }
+
+  /* Download link */
+  .logo-download {
+    display: inline-block;
+    margin-top: 1.25rem;
+    font-family: 'Poppins', sans-serif;
+    font-size: var(--fs-small);
+    font-weight: 500;
+    color: var(--cc-primary);
+    text-decoration: none;
+    transition: color 0.2s ease;
+  }
+
+  .logo-download:hover {
+    color: var(--cc-primary-dark);
+    text-decoration: underline;
+  }
+
+  /* Note */
+  .logo-note {
+    margin-top: 1.5rem;
+    font-family: 'Poppins', sans-serif;
+    font-size: var(--fs-small);
+    color: var(--cc-text-secondary);
+    line-height: 1.55;
+  }
+
+  .logo-note strong {
+    color: var(--cc-text-primary);
+    font-weight: 600;
+  }
+
+  /* ---- Footer ---- */
+  .logo-footer {
+    margin-top: var(--space-md);
+    font-family: 'Poppins', sans-serif;
+    font-size: 0.75rem;
+    color: var(--cc-text-muted);
+    letter-spacing: 0.02em;
+  }
+</style>
